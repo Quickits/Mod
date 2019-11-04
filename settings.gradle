@@ -1,2 +1,5 @@
 include ':app', ':core:base', ':core:common'
+
+include ':features:featureA:pkg'
+
 rootProject.name='Mod'
