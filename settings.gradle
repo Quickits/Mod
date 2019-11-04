@@ -1,0 +1,2 @@
+include ':app', ':core:base', ':core:common'
+rootProject.name='Mod'
