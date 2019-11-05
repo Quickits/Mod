@@ -1,4 +1,4 @@
-package cn.quickits.mod.featureA.app
+package cn.quickits.mod.featureB.app
 
 import org.junit.Test
 

@@ -14,12 +14,24 @@ class Config {
     static kotlin_version = "1.3.50"
 
     static dependenciesConifg = [
-            plugin: [
+            plugin  : [
                     gradle: "com.android.tools.build:gradle:$android_build_version",
                     kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
             ],
 
-            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            kotlin  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+
+            androidx: [
+                    "appcompat"        : "androidx.appcompat:appcompat:1.1.0",
+                    "core_ktx"         : "androidx.core:core-ktx:1.1.0",
+                    "constraint_layout": "androidx.constraintlayout:constraintlayout:1.1.3"
+            ],
+
+            test    : [
+                    "junit"            : "junit:junit:4.12",
+                    "junit_android_ext": "androidx.test.ext:junit:1.1.1",
+                    "espresso_core"    : "androidx.test.espresso:espresso-core:3.2.0"
+            ]
     ]
 
 }
