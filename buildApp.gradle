@@ -49,7 +49,17 @@ android {
 }
 
 dependencies {
+    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.pkgDependencies) {
+        api entry.value.dep
+    }
 
+    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.testDependencies) {
+        testImplementation entry.value.dep
+    }
+
+    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.androidTestDependencies) {
+        androidTestImplementation entry.value.dep
+    }
 }
 
 def getSuffix() {

@@ -14,7 +14,7 @@ class DependencyInfo {
             useLocal = true
         } else {
             remotePath = path
-            useLocal = true
+            useLocal = false
         }
     }
 
@@ -23,6 +23,12 @@ class DependencyInfo {
         this.remotePath = remotePath
         this.useLocal = useLocal
         this.path = useLocal ? localPath : remotePath
+    }
+
+
+    @Override
+    String toString() {
+        return "DependencyInfo { $path }"
     }
 
 }

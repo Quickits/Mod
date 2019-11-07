@@ -1,2 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.quickits.mod.featureB.pkg" />
+    package="cn.quickits.mod.featureB.pkg">
+
+    <application>
+
+        <activity android:name=".FeatureBActivity" />
+
+    </application>
+
+</manifest>

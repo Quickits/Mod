@@ -27,5 +27,34 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
+dependencies {
+    if (project.name == 'pkg') {
+        for (Map.Entry<String, DependencyInfo> entry : DependencyManager.exportDependencies) {
+            api entry.value.dep
+        }
+    } else if (project.name == 'export') {
+        api Config.deps.core.common.dep
+    }
+
+    if (project.path == ":core:base") {
+        for (Map.Entry<String, DependencyInfo> entry : DependencyManager.moduleDependencies) {
+            api entry.value.dep
+        }
+    } else if (project.path == ":core:common") {
+        api Config.deps.core.base.dep
+    }
+
+    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.testDependencies) {
+        testImplementation entry.value.dep
+    }
+
+    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.androidTestDependencies) {
+        androidTestImplementation entry.value.dep
+    }
+}

@@ -9,6 +9,7 @@ import org.gradle.api.invocation.Gradle
 class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
 
     void hook(Gradle g) {
+        DependencyManager.initDependencies()
         g.addBuildListener(this)
     }
 
@@ -27,6 +28,7 @@ class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
     @Override
     void projectsLoaded(Gradle gradle) {
         println "projectsLoaded"
+        DependencyManager.genDep(gradle)
         gradle.addProjectEvaluationListener(this)
     }
 
@@ -45,7 +47,6 @@ class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
     @Override
     void beforeEvaluate(Project project) {
         if (project.subprojects.isEmpty()) {
-            println(project.name)
             println(project.path)
             switch (project.name) {
                 case "app":
@@ -70,13 +71,9 @@ class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
 
 
     private static includeModule(Settings settings) {
-        settings.include ':app'
-
-        settings.include ':core:base', ':core:common'
-
-        settings.include ':features:featureA:pkg', ':features:featureA:export', ':features:featureA:app'
-
-        settings.include ':features:featureB:pkg', ':features:featureB:export', ':features:featureB:app'
+        for (Map.Entry<String, DependencyInfo> entry : DependencyManager.localDependencies.entrySet()) {
+            settings.include entry.value.localPath
+        }
     }
 
 }
