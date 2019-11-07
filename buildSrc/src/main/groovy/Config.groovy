@@ -13,7 +13,7 @@ class Config {
     static android_build_version = "3.5.1"
     static kotlin_version = "1.3.50"
 
-    static dependenciesConifg = [
+    static dependenciesConfig = [
             plugin  : [
                     gradle: "com.android.tools.build:gradle:$android_build_version",
                     kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",

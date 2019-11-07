@@ -1,9 +1,3 @@
-include ':app'
-
-include ':core:base', ':core:common'
-
-include ':features:featureA:pkg', ':features:featureA:export', ':features:featureA:app'
-
-include ':features:featureB:pkg', ':features:featureB:export', ':features:featureB:app'
-
 rootProject.name = 'Mod'
+
+new GradleBuildHooker().hook(gradle)

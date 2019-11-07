@@ -5,7 +5,7 @@ apply {
 dependencies {
     api project(":features:featureA:pkg")
 
-    testImplementation Config.dependenciesConifg.test.junit
-    androidTestImplementation Config.dependenciesConifg.test.junit_android_ext
-    androidTestImplementation Config.dependenciesConifg.test.espresso_core
+    testImplementation Config.dependenciesConfig.test.junit
+    androidTestImplementation Config.dependenciesConfig.test.junit_android_ext
+    androidTestImplementation Config.dependenciesConfig.test.espresso_core
 }

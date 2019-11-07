@@ -4,13 +4,13 @@ apply {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api Config.dependenciesConifg.kotlin
+    api Config.dependenciesConfig.kotlin
 
-    api Config.dependenciesConifg.androidx.appcompat
-    api Config.dependenciesConifg.androidx.core_ktx
-    api Config.dependenciesConifg.androidx .constraint_layout
+    api Config.dependenciesConfig.androidx.appcompat
+    api Config.dependenciesConfig.androidx.core_ktx
+    api Config.dependenciesConfig.androidx .constraint_layout
 
-    testImplementation Config.dependenciesConifg.test.junit
-    androidTestImplementation Config.dependenciesConifg.test.junit_android_ext
-    androidTestImplementation Config.dependenciesConifg.test.espresso_core
+    testImplementation Config.dependenciesConfig.test.junit
+    androidTestImplementation Config.dependenciesConfig.test.junit_android_ext
+    androidTestImplementation Config.dependenciesConfig.test.espresso_core
 }
