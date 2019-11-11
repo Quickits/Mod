@@ -10,7 +10,7 @@ class Config {
     static versionCode = 1
     static versionName = "1.0.0"
 
-    static android_build_version = "3.5.1"
+    static android_build_version = "3.5.2"
     static kotlin_version = "1.3.50"
 
     static deps = [
@@ -50,7 +50,6 @@ class Config {
 
             test       : [
                     junit: new DependencyInfo("junit:junit:4.12"),
-
             ],
 
             androidTest: [
