@@ -1,0 +1,7 @@
+[submodule "quickits/talos"]
+	path = quickits/talos
+	url = git@github.com:Quickits/Talos.git
+
+[submodule "quickits/halia"]
+	path = quickits/halia
+	url = git@github.com:Quickits/Halia.git
