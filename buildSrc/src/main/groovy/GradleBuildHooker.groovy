@@ -9,7 +9,7 @@ import org.gradle.api.invocation.Gradle
 class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
 
     void hook(Gradle g) {
-        DependencyManager.initDependencies()
+        DpdManager.initDependencies()
         g.addBuildListener(this)
     }
 
@@ -28,7 +28,7 @@ class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
     @Override
     void projectsLoaded(Gradle gradle) {
         println "projectsLoaded"
-        DependencyManager.genDep(gradle)
+        DpdManager.genDep(gradle)
         gradle.addProjectEvaluationListener(this)
     }
 
@@ -71,7 +71,7 @@ class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
 
 
     private static includeModule(Settings settings) {
-        for (Map.Entry<String, DependencyInfo> entry : DependencyManager.localDependencies.entrySet()) {
+        for (Map.Entry<String, DpdInfo> entry : DpdManager.localDependencies.entrySet()) {
             settings.include entry.value.localPath
         }
     }

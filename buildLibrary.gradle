@@ -35,18 +35,18 @@ android {
 
 dependencies {
     if (project.name == 'pkg') {
-        for (Map.Entry<String, DependencyInfo> entry : DependencyManager.exportDependencies) {
+        for (Map.Entry<String, DpdInfo> entry : DpdManager.exportDependencies) {
             api entry.value.dep
         }
     } else if (project.name == 'export') {
         api Config.deps.core.common.dep
     }
 
-    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.testDependencies) {
+    for (Map.Entry<String, DpdInfo> entry : DpdManager.testDependencies) {
         testImplementation entry.value.dep
     }
 
-    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.androidTestDependencies) {
+    for (Map.Entry<String, DpdInfo> entry : DpdManager.androidTestDependencies) {
         androidTestImplementation entry.value.dep
     }
 }

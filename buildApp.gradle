@@ -49,15 +49,15 @@ android {
 }
 
 dependencies {
-    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.pkgDependencies) {
+    for (Map.Entry<String, DpdInfo> entry : DpdManager.pkgDependencies) {
         api entry.value.dep
     }
 
-    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.testDependencies) {
+    for (Map.Entry<String, DpdInfo> entry : DpdManager.testDependencies) {
         testImplementation entry.value.dep
     }
 
-    for (Map.Entry<String, DependencyInfo> entry : DependencyManager.androidTestDependencies) {
+    for (Map.Entry<String, DpdInfo> entry : DpdManager.androidTestDependencies) {
         androidTestImplementation entry.value.dep
     }
 }

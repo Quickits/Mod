@@ -13,7 +13,7 @@ buildscript {
     }
 
     dependencies {
-        for (Map.Entry<String, DependencyInfo> entry : DependencyManager.pluginDependencies) {
+        for (Map.Entry<String, DpdInfo> entry : DpdManager.pluginDependencies) {
             classpath entry.value.dep
         }
 

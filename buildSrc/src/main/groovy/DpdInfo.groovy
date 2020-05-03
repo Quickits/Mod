@@ -1,4 +1,4 @@
-class DependencyInfo {
+class DpdInfo {
 
     String path
     String localPath
@@ -6,7 +6,7 @@ class DependencyInfo {
     boolean useLocal
     def dep
 
-    DependencyInfo(String path) {
+    DpdInfo(String path) {
         this.path = path
 
         if (path.startsWith(":")) {
@@ -18,7 +18,7 @@ class DependencyInfo {
         }
     }
 
-    DependencyInfo(String localPath, String remotePath, boolean useLocal) {
+    DpdInfo(String localPath, String remotePath, boolean useLocal) {
         this.localPath = localPath
         this.remotePath = remotePath
         this.useLocal = useLocal
