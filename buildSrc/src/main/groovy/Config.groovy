@@ -14,11 +14,13 @@ class Config {
     public static kotlin_version = "1.3.72"
 
     public static deps = [
+            // Plugin dependence start
             plugin     : [
                     gradle: new DpdInfo("com.android.tools.build:gradle:$android_build_version"),
                     kotlin: new DpdInfo("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"),
             ],
 
+            // Local Module start
             app        : new DpdInfo(":app"),
 
             fearures   : [
@@ -40,6 +42,7 @@ class Config {
                     common: new DpdInfo(":core:common"),
             ],
 
+            // Third-part Module start
             kotlin     : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
 
             androidx   : [
@@ -48,6 +51,7 @@ class Config {
                     constraint_layout: new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3")
             ],
 
+            // Testing Module start
             test       : [
                     junit: new DpdInfo("junit:junit:4.12"),
             ],

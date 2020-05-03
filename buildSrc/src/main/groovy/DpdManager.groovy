@@ -1,5 +1,12 @@
 import org.gradle.api.invocation.Gradle
 
+/**
+ * Dependence Manager
+ *
+ * @author Gavin Liu
+ *
+ * Created on 2019/11/7.
+ */
 class DpdManager {
 
     private static def allDependencies = [:]

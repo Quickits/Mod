@@ -1,3 +1,10 @@
+/**
+ * Dependence Info
+ *
+ * @author Gavin Liu
+ *
+ * Created on 2019/11/7.
+ */
 class DpdInfo {
 
     String path
