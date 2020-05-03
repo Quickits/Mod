@@ -1,7 +1,7 @@
 package cn.quickits.mod.featureA.app
 
-import cn.quickits.common.app.CommonApplication
+import cn.quickits.arch.base.app.BaseApplication
 
-class FeatureAApplication : CommonApplication() {
+class FeatureAApplication : BaseApplication() {
 
 }

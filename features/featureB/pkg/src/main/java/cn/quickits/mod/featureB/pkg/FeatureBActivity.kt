@@ -1,9 +1,9 @@
 package cn.quickits.mod.featureB.pkg
 
 import android.os.Bundle
-import cn.quickits.common.app.CommonActivity
+import cn.quickits.arch.base.app.BaseActivity
 
-class FeatureBActivity : CommonActivity() {
+class FeatureBActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
