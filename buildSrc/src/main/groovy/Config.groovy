@@ -10,8 +10,8 @@ class Config {
     static versionCode = 1
     static versionName = "1.0.0"
 
-    static android_build_version = "3.5.2"
-    static kotlin_version = "1.3.50"
+    static android_build_version = "3.6.3"
+    static kotlin_version = "1.3.72"
 
     static deps = [
             plugin     : [

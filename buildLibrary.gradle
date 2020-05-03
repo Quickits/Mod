@@ -42,14 +42,6 @@ dependencies {
         api Config.deps.core.common.dep
     }
 
-    if (project.path == ":core:base") {
-        for (Map.Entry<String, DependencyInfo> entry : DependencyManager.moduleDependencies) {
-            api entry.value.dep
-        }
-    } else if (project.path == ":core:common") {
-        api Config.deps.core.base.dep
-    }
-
     for (Map.Entry<String, DependencyInfo> entry : DependencyManager.testDependencies) {
         testImplementation entry.value.dep
     }
