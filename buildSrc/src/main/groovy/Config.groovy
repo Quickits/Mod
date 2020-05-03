@@ -15,15 +15,15 @@ class Config {
 
     public static deps = [
             // Plugin dependence start
-            plugin     : [
+            plugin          : [
                     gradle: new DpdInfo("com.android.tools.build:gradle:$android_build_version"),
                     kotlin: new DpdInfo("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"),
             ],
 
             // Local Module start
-            app        : new DpdInfo(":app"),
+            app             : new DpdInfo(":app"),
 
-            fearures   : [
+            fearures        : [
                     featureA: [
                             app   : new DpdInfo(":features:featureA:app"),
                             pkg   : new DpdInfo(":features:featureA:pkg"),
@@ -37,27 +37,33 @@ class Config {
                     ]
             ],
 
-            quickits       : [
-                    base    : new DpdInfo(":quickits:base"),
-                    common  : new DpdInfo(":quickits:common"),
-                    talos   : new DpdInfo(":quickits:talos")
+            quickits        : [
+                    base  : new DpdInfo(":quickits:base"),
+                    common: new DpdInfo(":quickits:common"),
+                    talos : new DpdInfo(":quickits:talos"),
+                    halia : new DpdInfo(":quickits:halia"),
             ],
 
             // Third-part Module start
-            kotlin     : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
+            kotlin          : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
 
-            androidx   : [
+            androidx        : [
                     appcompat        : new DpdInfo("androidx.appcompat:appcompat:1.1.0"),
                     core_ktx         : new DpdInfo("androidx.core:core-ktx:1.1.0"),
                     constraint_layout: new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3")
             ],
 
+            rxjava2         : new DpdInfo("io.reactivex.rxjava2:rxjava:2.2.19"),
+            rxAndroid       : new DpdInfo("io.reactivex.rxjava2:rxandroid:2.1.1"),
+
+            material_dialogs: new DpdInfo("com.afollestad.material-dialogs:core:2.8.1"),
+
             // Testing Module start
-            test       : [
+            test            : [
                     junit: new DpdInfo("junit:junit:4.12"),
             ],
 
-            androidTest: [
+            androidTest     : [
                     junit_android_ext: new DpdInfo("androidx.test.ext:junit:1.1.1"),
                     espresso_core    : new DpdInfo("androidx.test.espresso:espresso-core:3.2.0")
             ]
