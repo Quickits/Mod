@@ -37,9 +37,10 @@ class Config {
                     ]
             ],
 
-            core       : [
-                    base  : new DpdInfo(":core:base"),
-                    common: new DpdInfo(":core:common"),
+            quickits       : [
+                    base    : new DpdInfo(":quickits:base"),
+                    common  : new DpdInfo(":quickits:common"),
+                    talos   : new DpdInfo(":quickits:talos")
             ],
 
             // Third-part Module start

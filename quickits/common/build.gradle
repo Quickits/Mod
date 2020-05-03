@@ -1,0 +1,4 @@
+dependencies {
+    api Config.deps.quickits.base.dep
+    api Config.deps.quickits.talos.dep
+}
