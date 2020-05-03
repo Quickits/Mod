@@ -1,3 +1,4 @@
 dependencies {
     api Config.deps.core.base.dep
+    api Config.deps.core.quickits.talos.dep
 }

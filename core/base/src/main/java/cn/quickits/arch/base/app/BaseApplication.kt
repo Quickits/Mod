@@ -1,4 +1,4 @@
-package cn.quickits.base.app
+package cn.quickits.arch.base.app
 
 import android.app.Application
 
