@@ -5,3 +5,7 @@
 [submodule "quickits/halia"]
 	path = quickits/halia
 	url = git@github.com:Quickits/Halia.git
+
+[submodule "quickits/routerfit"]
+	path = quickits/routerfit
+	url = git@github.com:Quickits/Routerfit.git
