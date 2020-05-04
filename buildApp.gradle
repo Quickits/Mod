@@ -67,7 +67,11 @@ kapt {
 
 dependencies {
     for (Map.Entry<String, DpdInfo> entry : DpdManager.pkgDependencies) {
-        api entry.value.dep
+        runtimeOnly entry.value.dep
+    }
+
+    for (Map.Entry<String, DpdInfo> entry : DpdManager.exportDependencies) {
+        implementation entry.value.dep
     }
 
     for (Map.Entry<String, DpdInfo> entry : DpdManager.testDependencies) {
