@@ -44,10 +44,11 @@ class Config {
             ],
 
             quickits        : [
-                    base  : new DpdInfo(":quickits:base"),
-                    common: new DpdInfo(":quickits:common"),
-                    talos : new DpdInfo(":quickits:talos"),
-                    halia : new DpdInfo(":quickits:halia"),
+                    base     : new DpdInfo(":quickits:base"),
+                    common   : new DpdInfo(":quickits:common"),
+                    talos    : new DpdInfo(":quickits:talos"),
+                    halia    : new DpdInfo(":quickits:halia"),
+                    routerfit: new DpdInfo(":quickits:routerfit"),
             ],
 
             // Third-part Module start
@@ -56,11 +57,16 @@ class Config {
             androidx        : [
                     appcompat        : new DpdInfo("androidx.appcompat:appcompat:1.1.0"),
                     core_ktx         : new DpdInfo("androidx.core:core-ktx:1.1.0"),
-                    constraint_layout: new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3")
+                    constraint_layout: new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3"),
             ],
 
             rxjava2         : new DpdInfo("io.reactivex.rxjava2:rxjava:2.2.19"),
             rxAndroid       : new DpdInfo("io.reactivex.rxjava2:rxandroid:2.1.1"),
+
+            arouter         : [
+                    api     : new DpdInfo("com.alibaba:arouter-api:1.5.0"),
+                    compiler: new DpdInfo("com.alibaba:arouter-compiler:1.2.2"),
+            ],
 
             material_dialogs: new DpdInfo("com.afollestad.material-dialogs:core:2.8.1"),
 
@@ -71,7 +77,7 @@ class Config {
 
             androidTest     : [
                     junit_android_ext: new DpdInfo("androidx.test.ext:junit:1.1.1"),
-                    espresso_core    : new DpdInfo("androidx.test.espresso:espresso-core:3.2.0")
+                    espresso_core    : new DpdInfo("androidx.test.espresso:espresso-core:3.2.0"),
             ]
     ]
 

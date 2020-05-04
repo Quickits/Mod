@@ -3,6 +3,8 @@ apply {
 
     plugin "kotlin-android"
 
+    plugin "kotlin-kapt"
+
     plugin "kotlin-android-extensions"
 }
 
@@ -17,13 +19,13 @@ android {
         versionName Config.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
 
@@ -31,14 +33,29 @@ android {
         abortOnError false
     }
 
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.path.replaceAll(":", "_"))
+    }
 }
 
 dependencies {
-    if (project.name == 'pkg') {
+    if (project.name == "pkg") {
         for (Map.Entry<String, DpdInfo> entry : DpdManager.exportDependencies) {
             api entry.value.dep
         }
-    } else if (project.name == 'export') {
+    } else if (project.name == "export") {
         api Config.deps.quickits.common.dep
     }
 

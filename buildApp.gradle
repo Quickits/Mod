@@ -3,6 +3,8 @@ apply {
 
     plugin "kotlin-android"
 
+    plugin "kotlin-kapt"
+
     plugin "kotlin-android-extensions"
 }
 
@@ -27,17 +29,17 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
 
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
 
     packagingOptions {
-        exclude 'META-INF/*'
+        exclude "META-INF/*"
     }
 
     dexOptions {
@@ -45,6 +47,21 @@ android {
         javaMaxHeapSize "8g"
         maxProcessCount 8
         dexInProcess = true
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.path.replaceAll(":", "_"))
     }
 }
 

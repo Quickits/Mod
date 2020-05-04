@@ -1,9 +1,9 @@
 package cn.quickits.mod
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import cn.quickits.mod.featureA.pkg.FeatureAActivity
+import androidx.appcompat.app.AppCompatActivity
+import cn.quickits.mod.featureA.export.FeatureARouter
+import cn.quickits.routerfit.Routerfit
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.feature_a_activity_main)
 
         button.setOnClickListener {
-            startActivity(Intent(this, FeatureAActivity::class.java))
+            Routerfit.create(FeatureARouter::class.java).launchFeatureA()
         }
     }
 }
