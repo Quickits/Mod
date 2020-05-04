@@ -24,17 +24,23 @@ class Config {
             app             : new DpdInfo(":app"),
 
             fearures        : [
-                    featureA: [
+                    featureA    : [
                             app   : new DpdInfo(":features:featureA:app"),
                             pkg   : new DpdInfo(":features:featureA:pkg"),
                             export: new DpdInfo(":features:featureA:export"),
                     ],
 
-                    featureB: [
+                    featureB    : [
                             app   : new DpdInfo(":features:featureB:app"),
                             pkg   : new DpdInfo(":features:featureB:pkg"),
                             export: new DpdInfo(":features:featureB:export"),
-                    ]
+                    ],
+
+                    featureHalia: [
+                            app   : new DpdInfo(":features:featureHalia:app"),
+                            pkg   : new DpdInfo(":features:featureHalia:pkg"),
+                            export: new DpdInfo(":features:featureHalia:export"),
+                    ],
             ],
 
             quickits        : [
