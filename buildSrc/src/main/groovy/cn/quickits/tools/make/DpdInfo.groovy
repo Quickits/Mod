@@ -1,3 +1,5 @@
+package cn.quickits.tools.make
+
 /**
  * Dependence Info
  *

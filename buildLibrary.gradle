@@ -1,3 +1,7 @@
+import cn.quickits.tools.make.Config
+import cn.quickits.tools.make.DpdInfo
+import cn.quickits.tools.make.DpdManager
+
 apply {
     plugin "com.android.library"
 

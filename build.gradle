@@ -1,3 +1,6 @@
+import cn.quickits.tools.make.DpdInfo
+import cn.quickits.tools.make.DpdManager
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 println("root build")

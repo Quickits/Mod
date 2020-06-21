@@ -1,3 +1,5 @@
+package cn.quickits.tools.make
+
 class Config {
 
     public static applicationId = "cn.quickits.mod"

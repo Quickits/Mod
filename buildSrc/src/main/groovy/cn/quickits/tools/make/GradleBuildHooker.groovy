@@ -1,3 +1,5 @@
+package cn.quickits.tools.make
+
 import org.gradle.BuildListener
 import org.gradle.BuildResult
 import org.gradle.api.Project
