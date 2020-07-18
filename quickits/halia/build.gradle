@@ -1,0 +1,11 @@
+import cn.quickits.tools.make.Config
+
+dependencies {
+    api Config.deps.androidx.appcompat.dep
+    api Config.deps.androidx.core_ktx.dep
+
+    api Config.deps.rxjava2.dep
+    api Config.deps.rxAndroid.dep
+
+    api Config.deps.material_dialogs.dep
+}
