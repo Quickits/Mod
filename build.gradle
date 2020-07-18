@@ -1,0 +1,5 @@
+import cn.quickits.tools.make.Config
+
+dependencies{
+    api Config.deps.quickits.base.dep
+}
