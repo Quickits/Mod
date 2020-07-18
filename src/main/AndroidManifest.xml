@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.quickits.halia">
+
+    <application>
+
+        <provider
+            android:name=".HaliaInitProvider"
+            android:authorities="${applicationId}.halia"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
