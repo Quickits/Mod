@@ -1,0 +1,5 @@
+import cn.quickits.tools.make.Config
+
+dependencies {
+    api Config.deps.arouter.api.dep
+}
