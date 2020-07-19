@@ -15,6 +15,8 @@ class Config {
     public static android_build_version = "3.6.3"
     public static kotlin_version = "1.3.72"
 
+    public static lifecycle_version = "2.2.0"
+
     public static deps = [
             // Plugin dependence start
             plugin          : [
@@ -26,19 +28,15 @@ class Config {
             // Local Module start
             app             : new DpdInfo(":app"),
 
+            quickits        : [
+                    all      : new DpdInfo(":quickits:all"),
+                    talos    : new DpdInfo(":quickits:talos"),
+                    halia    : new DpdInfo(":quickits:halia"),
+                    rainbow  : new DpdInfo(":quickits:rainbow"),
+                    routerfit: new DpdInfo(":quickits:routerfit"),
+            ],
+
             fearures        : [
-                    featureA      : [
-                            app   : new DpdInfo(":features:featureA:app"),
-                            pkg   : new DpdInfo(":features:featureA:pkg"),
-                            export: new DpdInfo(":features:featureA:export"),
-                    ],
-
-                    featureB      : [
-                            app   : new DpdInfo(":features:featureB:app"),
-                            pkg   : new DpdInfo(":features:featureB:pkg"),
-                            export: new DpdInfo(":features:featureB:export"),
-                    ],
-
                     featureHalia  : [
                             app   : new DpdInfo(":features:featureHalia:app"),
                             pkg   : new DpdInfo(":features:featureHalia:pkg"),
@@ -52,14 +50,6 @@ class Config {
                     ],
             ],
 
-            quickits        : [
-                    all      : new DpdInfo(":quickits:all"),
-                    talos    : new DpdInfo(":quickits:talos"),
-                    halia    : new DpdInfo(":quickits:halia"),
-                    rainbow  : new DpdInfo(":quickits:rainbow"),
-                    routerfit: new DpdInfo(":quickits:routerfit"),
-            ],
-
             // Third-part Module start
             kotlin          : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
 
@@ -67,6 +57,10 @@ class Config {
                     appcompat              : new DpdInfo("androidx.appcompat:appcompat:1.1.0"),
                     core_ktx               : new DpdInfo("androidx.core:core-ktx:1.3.0"),
                     constraint_layout      : new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3"),
+
+                    lifecycle_runtime_ktx  : new DpdInfo("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"),
+                    lifecycle_livedata_ktx : new DpdInfo("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"),
+                    lifecycle_viewmodel_ktx: new DpdInfo("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"),
 
                     navigation_ui_ktx      : new DpdInfo("androidx.navigation:navigation-ui-ktx:2.2.0"),
                     navigation_fragment_ktx: new DpdInfo("androidx.navigation:navigation-fragment-ktx:2.2.0"),

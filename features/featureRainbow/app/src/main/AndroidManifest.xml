@@ -4,7 +4,6 @@
     package="cn.quickits.mod.feature.rainbow.app">
 
     <application
-        android:name="cn.quickits.mod.feature.rainbow.pkg.MainApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="cn.quickits.mod.feature.rainbow.pkg.MainActivity">
+        <activity android:name="cn.quickits.mod.feature.rainbow.pkg.RainbowDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

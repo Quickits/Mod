@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import cn.quickits.mod.feature.rainbow.pkg.R
-import kotlinx.android.synthetic.main.fragment_demo.*
+import kotlinx.android.synthetic.main.feature_rainbow_fragment_demo.*
 
 
 /**
@@ -20,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_demo.*
 class DemoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_demo, container, false)
+        return inflater.inflate(R.layout.feature_rainbow_fragment_demo, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,5 +1,0 @@
-import cn.quickits.tools.make.Config
-
-dependencies {
-    kapt Config.deps.arouter.compiler.dep
-}
