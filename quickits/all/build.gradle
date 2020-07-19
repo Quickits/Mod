@@ -1,0 +1,7 @@
+import cn.quickits.tools.make.Config
+
+dependencies {
+    api Config.deps.quickits.talos.dep
+    api Config.deps.quickits.halia.dep
+    api Config.deps.quickits.routerfit.dep
+}

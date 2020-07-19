@@ -1,7 +1,7 @@
 package cn.quickits.mod.featureA.pkg
 
 import android.os.Bundle
-import cn.quickits.arch.base.app.BaseActivity
+import cn.quickits.talos.app.BaseActivity
 import cn.quickits.mod.featureB.export.FeatureBRouter
 import cn.quickits.routerfit.Routerfit
 import com.alibaba.android.arouter.facade.annotation.Route

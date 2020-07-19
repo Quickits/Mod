@@ -1,6 +1,6 @@
 package cn.quickits.mod
 
-import cn.quickits.arch.base.app.BaseApplication
+import cn.quickits.talos.app.BaseApplication
 
 /**
  * @author Gavin Liu

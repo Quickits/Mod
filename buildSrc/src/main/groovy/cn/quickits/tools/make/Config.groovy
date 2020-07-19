@@ -46,8 +46,7 @@ class Config {
             ],
 
             quickits        : [
-                    base     : new DpdInfo(":quickits:base"),
-                    common   : new DpdInfo(":quickits:common"),
+                    all      : new DpdInfo(":quickits:all"),
                     talos    : new DpdInfo(":quickits:talos"),
                     halia    : new DpdInfo(":quickits:halia"),
                     routerfit: new DpdInfo(":quickits:routerfit"),

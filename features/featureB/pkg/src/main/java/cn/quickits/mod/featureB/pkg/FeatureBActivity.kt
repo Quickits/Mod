@@ -1,7 +1,7 @@
 package cn.quickits.mod.featureB.pkg
 
 import android.os.Bundle
-import cn.quickits.arch.base.app.BaseActivity
+import cn.quickits.talos.app.BaseActivity
 import com.alibaba.android.arouter.facade.annotation.Route
 
 @Route(path = "/featureB/main")

@@ -2,7 +2,7 @@ package cn.quickits.mod.feature.halia.pkg
 
 import android.os.Bundle
 import android.util.Log
-import cn.quickits.arch.base.app.BaseActivity
+import cn.quickits.talos.app.BaseActivity
 import cn.quickits.halia.loading
 import com.alibaba.android.arouter.facade.annotation.Route
 import kotlinx.android.synthetic.main.activity_halia_demo.*
