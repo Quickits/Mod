@@ -1,0 +1,6 @@
+import cn.quickits.tools.make.Config
+
+dependencies {
+    api Config.deps.androidx.navigation_ui_ktx.dep
+    api Config.deps.androidx.navigation_fragment_ktx.dep
+}

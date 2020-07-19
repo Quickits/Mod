@@ -18,30 +18,37 @@ class Config {
     public static deps = [
             // Plugin dependence start
             plugin          : [
-                    gradle: new DpdInfo("com.android.tools.build:gradle:$android_build_version"),
-                    kotlin: new DpdInfo("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"),
+                    gradle              : new DpdInfo("com.android.tools.build:gradle:$android_build_version"),
+                    kotlin              : new DpdInfo("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"),
+                    navigation_safe_args: new DpdInfo("androidx.navigation:navigation-safe-args-gradle-plugin:2.2.0"),
             ],
 
             // Local Module start
             app             : new DpdInfo(":app"),
 
             fearures        : [
-                    featureA    : [
+                    featureA      : [
                             app   : new DpdInfo(":features:featureA:app"),
                             pkg   : new DpdInfo(":features:featureA:pkg"),
                             export: new DpdInfo(":features:featureA:export"),
                     ],
 
-                    featureB    : [
+                    featureB      : [
                             app   : new DpdInfo(":features:featureB:app"),
                             pkg   : new DpdInfo(":features:featureB:pkg"),
                             export: new DpdInfo(":features:featureB:export"),
                     ],
 
-                    featureHalia: [
+                    featureHalia  : [
                             app   : new DpdInfo(":features:featureHalia:app"),
                             pkg   : new DpdInfo(":features:featureHalia:pkg"),
                             export: new DpdInfo(":features:featureHalia:export"),
+                    ],
+
+                    featureRainbow: [
+                            app   : new DpdInfo(":features:featureRainbow:app"),
+                            pkg   : new DpdInfo(":features:featureRainbow:pkg"),
+                            export: new DpdInfo(":features:featureRainbow:export"),
                     ],
             ],
 
@@ -49,6 +56,7 @@ class Config {
                     all      : new DpdInfo(":quickits:all"),
                     talos    : new DpdInfo(":quickits:talos"),
                     halia    : new DpdInfo(":quickits:halia"),
+                    rainbow  : new DpdInfo(":quickits:rainbow"),
                     routerfit: new DpdInfo(":quickits:routerfit"),
             ],
 
@@ -56,10 +64,15 @@ class Config {
             kotlin          : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
 
             androidx        : [
-                    appcompat        : new DpdInfo("androidx.appcompat:appcompat:1.1.0"),
-                    core_ktx         : new DpdInfo("androidx.core:core-ktx:1.1.0"),
-                    constraint_layout: new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3"),
+                    appcompat              : new DpdInfo("androidx.appcompat:appcompat:1.1.0"),
+                    core_ktx               : new DpdInfo("androidx.core:core-ktx:1.3.0"),
+                    constraint_layout      : new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3"),
+
+                    navigation_ui_ktx      : new DpdInfo("androidx.navigation:navigation-ui-ktx:2.2.0"),
+                    navigation_fragment_ktx: new DpdInfo("androidx.navigation:navigation-fragment-ktx:2.2.0"),
             ],
+
+            material        : new DpdInfo("com.google.android.material:material:1.1.0"),
 
             rxjava2         : new DpdInfo("io.reactivex.rxjava2:rxjava:2.2.19"),
             rxAndroid       : new DpdInfo("io.reactivex.rxjava2:rxandroid:2.1.1"),

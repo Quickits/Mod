@@ -55,6 +55,8 @@ kapt {
 }
 
 dependencies {
+    api Config.deps.kotlin.dep
+
     if (project.name == "pkg") {
         for (Map.Entry<String, DpdInfo> entry : DpdManager.exportDependencies) {
             api entry.value.dep
