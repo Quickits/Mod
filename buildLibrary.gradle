@@ -57,11 +57,11 @@ kapt {
 dependencies {
     api Config.deps.kotlin.dep
 
-    if (project.name == "pkg") {
+    if (project.name.endsWith("_pkg")) {
         for (Map.Entry<String, DpdInfo> entry : DpdManager.exportDependencies) {
             api entry.value.dep
         }
-    } else if (project.name == "export") {
+    } else if (project.name.endsWith("_export")) {
         api Config.deps.quickits_all.dep
     }
 

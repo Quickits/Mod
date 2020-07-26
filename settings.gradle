@@ -25,9 +25,9 @@ for (def pro in config.moduleConfig) {
 
     if (pro.useLocal && pro.isApply) {
         include pro.localPath
+        project(pro.localPath).name = pro.localPath.substring(1).replace(":", "_")
     }
 }
-
 
 
 def ls = System.getProperty("line.separator")

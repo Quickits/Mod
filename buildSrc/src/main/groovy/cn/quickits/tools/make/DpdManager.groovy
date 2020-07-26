@@ -81,7 +81,7 @@ class DpdManager {
         for (Map.Entry<String, DpdInfo> entry : allDependencies.entrySet()) {
             def value = entry.getValue()
             if (value.useLocal) {
-                value.dep = gradle.rootProject.findProject(value.localPath)
+                value.dep = gradle.rootProject.findProject(value.projectPath)
             } else {
                 value.dep = value.remotePath
             }

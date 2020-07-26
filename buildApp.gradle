@@ -89,6 +89,5 @@ dependencies {
 
 def getSuffix() {
     if (project.path == ":app") return ""
-
-    return project.path.replace(":", "_").substring(":features".length(), project.path.length() - ":app".length())
+    return "." + project.name.substring("features_".length(), project.name.length() - "_app".length())
 }

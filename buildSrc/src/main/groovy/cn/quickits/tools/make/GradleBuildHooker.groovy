@@ -17,27 +17,24 @@ class GradleBuildHooker implements ProjectEvaluationListener {
     // ProjectEvaluationListener
     @Override
     void beforeEvaluate(Project project) {
-        if (project.subprojects.isEmpty()) {
-            println(project.path)
-            switch (project.name) {
-                case "app":
-                    project.apply {
-                        from "${project.rootDir.path}/buildApp.gradle"
-                    }
-                    break
+        println(">> " + project.path)
 
-                default:
-                    project.apply {
-                        from "${project.rootDir.path}/buildLibrary.gradle"
-                    }
-                    break
+        if (project.subprojects.isEmpty()) {
+            if (project.name == "app" || project.name.endsWith("_app")) {
+                project.apply {
+                    from "${project.rootDir.path}/buildApp.gradle"
+                }
+            } else {
+                project.apply {
+                    from "${project.rootDir.path}/buildLibrary.gradle"
+                }
             }
         }
     }
 
     @Override
     void afterEvaluate(Project project, ProjectState projectState) {
-
+        println("<< " + project.path)
     }
 
 }

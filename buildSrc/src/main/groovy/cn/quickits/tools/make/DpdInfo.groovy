@@ -34,6 +34,9 @@ class DpdInfo {
         this.path = useLocal ? localPath : remotePath
     }
 
+    String getProjectPath() {
+        return localPath.substring(0, localPath.lastIndexOf(":")) + ":" + localPath.substring(1).replace(":", "_")
+    }
 
     @Override
     String toString() {
