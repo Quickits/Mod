@@ -1,49 +1,18 @@
 package cn.quickits.tools.make
 
-import org.gradle.BuildListener
-import org.gradle.BuildResult
+
 import org.gradle.api.Project
 import org.gradle.api.ProjectEvaluationListener
 import org.gradle.api.ProjectState
-import org.gradle.api.initialization.Settings
 import org.gradle.api.invocation.Gradle
 
-class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
+class GradleBuildHooker implements ProjectEvaluationListener {
 
-    void hook(Gradle g) {
+    void hook(Gradle gradle) {
         DpdManager.initDependencies()
-        g.addBuildListener(this)
-    }
-
-    // BuildListener
-    @Override
-    void buildStarted(Gradle gradle) {
-        println "buildStarted"
-    }
-
-    @Override
-    void settingsEvaluated(Settings settings) {
-        println "settingsEvaluated"
-        includeModule(settings)
-    }
-
-    @Override
-    void projectsLoaded(Gradle gradle) {
-        println "projectsLoaded"
         DpdManager.genDep(gradle)
         gradle.addProjectEvaluationListener(this)
     }
-
-    @Override
-    void projectsEvaluated(Gradle gradle) {
-        println "projectsEvaluated"
-    }
-
-    @Override
-    void buildFinished(BuildResult buildResult) {
-        println "buildFinished"
-    }
-
 
     // ProjectEvaluationListener
     @Override
@@ -69,13 +38,6 @@ class GradleBuildHooker implements BuildListener, ProjectEvaluationListener {
     @Override
     void afterEvaluate(Project project, ProjectState projectState) {
 
-    }
-
-
-    private static includeModule(Settings settings) {
-        for (Map.Entry<String, DpdInfo> entry : DpdManager.localDependencies.entrySet()) {
-            settings.include entry.value.localPath
-        }
     }
 
 }

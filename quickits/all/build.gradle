@@ -1,8 +1,8 @@
 import cn.quickits.tools.make.Config
 
 dependencies {
-    api Config.deps.quickits.talos.dep
-    api Config.deps.quickits.halia.dep
-    api Config.deps.quickits.rainbow.dep
-    api Config.deps.quickits.routerfit.dep
+    api Config.deps.quickits_talos.dep
+    api Config.deps.quickits_halia.dep
+    api Config.deps.quickits_rainbow.dep
+    api Config.deps.quickits_routerfit.dep
 }

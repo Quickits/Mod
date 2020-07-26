@@ -1,12 +1,13 @@
 import cn.quickits.tools.make.DpdInfo
 import cn.quickits.tools.make.DpdManager
+import cn.quickits.tools.make.GradleBuildHooker
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 println("root build")
 
 buildscript {
-    ext.kotlin_version = '1.3.50'
+    new GradleBuildHooker().hook(gradle)
 
     repositories {
         maven { url "https://maven.aliyun.com/repository/google" }

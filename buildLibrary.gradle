@@ -62,7 +62,7 @@ dependencies {
             api entry.value.dep
         }
     } else if (project.name == "export") {
-        api Config.deps.quickits.all.dep
+        api Config.deps.quickits_all.dep
     }
 
     for (Map.Entry<String, DpdInfo> entry : DpdManager.testDependencies) {

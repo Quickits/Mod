@@ -41,9 +41,9 @@ class DpdManager {
                 testDependencies.put(name, value)
             } else if (name.startsWith("androidTest.")) {
                 androidTestDependencies.put(name, value)
-            } else if (name.endsWith(".pkg")) {
+            } else if (name.endsWith("_pkg")) {
                 pkgDependencies.put(name, value)
-            } else if (name.endsWith(".export")) {
+            } else if (name.endsWith("_export")) {
                 exportDependencies.put(name, value)
             }
 
