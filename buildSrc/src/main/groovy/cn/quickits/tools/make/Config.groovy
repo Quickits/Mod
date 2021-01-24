@@ -6,13 +6,13 @@ class Config {
     public static appName = "Mod"
 
     public static compileSdkVersion = 29
-    public static buildToolsVersion = "29.0.1"
     public static minSdkVersion = 21
     public static targetSdkVersion = 29
+
     public static versionCode = 1
     public static versionName = "1.0.0"
 
-    public static android_build_version = "4.0.1"
+    public static android_build_version = "4.1.2"
     public static kotlin_version = "1.3.72"
 
     public static lifecycle_version = "2.2.0"

@@ -22,11 +22,11 @@ class GradleBuildHooker implements ProjectEvaluationListener {
         if (project.subprojects.isEmpty()) {
             if (project.name == "app" || project.name.endsWith("_app")) {
                 project.apply {
-                    from "${project.rootDir.path}/buildApp.gradle"
+                    from "${project.rootDir.path}/buildScript/buildApp.gradle"
                 }
             } else {
                 project.apply {
-                    from "${project.rootDir.path}/buildLibrary.gradle"
+                    from "${project.rootDir.path}/buildScript/buildLibrary.gradle"
                 }
             }
         }
