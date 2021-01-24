@@ -2,8 +2,6 @@ import cn.quickits.tools.make.DpdInfo
 import cn.quickits.tools.make.DpdManager
 import cn.quickits.tools.make.GradleBuildHooker
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 println("root build")
 
 buildscript {
@@ -20,9 +18,6 @@ buildscript {
         for (Map.Entry<String, DpdInfo> entry : DpdManager.pluginDependencies) {
             classpath entry.value.dep
         }
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
