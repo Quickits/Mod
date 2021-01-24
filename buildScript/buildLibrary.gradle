@@ -14,7 +14,6 @@ apply {
 
 android {
     compileSdkVersion Config.compileSdkVersion
-    buildToolsVersion Config.buildToolsVersion
 
     defaultConfig {
         minSdkVersion Config.minSdkVersion
