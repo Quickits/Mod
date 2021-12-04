@@ -2,10 +2,10 @@ package cn.quickits.mod.feature.halia.pkg
 
 import android.os.Bundle
 import android.util.Log
-import cn.quickits.talos.app.BaseActivity
 import cn.quickits.halia.loading
+import cn.quickits.mod.feature.halia.pkg.databinding.ActivityHaliaDemoBinding
+import cn.quickits.talos.app.BaseActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import kotlinx.android.synthetic.main.activity_halia_demo.*
 
 /**
  * @author Gavin Liu
@@ -15,10 +15,14 @@ import kotlinx.android.synthetic.main.activity_halia_demo.*
 @Route(path = "/halia/main")
 class HaliaDemoActivity : BaseActivity() {
 
+    private lateinit var binding: ActivityHaliaDemoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_halia_demo)
-        button.setOnClickListener {
+        binding = ActivityHaliaDemoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.button.setOnClickListener {
             API.loadingByNetwork()
                 .loading()
                 .subscribe({ content ->
@@ -27,7 +31,6 @@ class HaliaDemoActivity : BaseActivity() {
                     Log.e(HaliaDemoActivity::class.simpleName, error.message ?: "")
                 })
         }
-
     }
 
 }
