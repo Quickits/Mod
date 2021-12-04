@@ -1,10 +1,10 @@
 package cn.quickits.halia
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.Application
 import android.app.Dialog
 import android.os.Bundle
-import com.afollestad.materialdialogs.MaterialDialog
 import java.util.*
 
 
@@ -23,29 +23,29 @@ object Halia {
         application.registerActivityLifecycleCallbacks(object :
             Application.ActivityLifecycleCallbacks {
 
-            override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
+            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 setTopActivity(activity)
             }
 
-            override fun onActivityStarted(activity: Activity?) {
+            override fun onActivityStarted(activity: Activity) {
                 setTopActivity(activity)
             }
 
-            override fun onActivityResumed(activity: Activity?) {
+            override fun onActivityResumed(activity: Activity) {
                 setTopActivity(activity)
             }
 
-            override fun onActivityDestroyed(activity: Activity?) {
+            override fun onActivityDestroyed(activity: Activity) {
                 activityList.remove(activity)
             }
 
-            override fun onActivityPaused(activity: Activity?) {
+            override fun onActivityPaused(activity: Activity) {
             }
 
-            override fun onActivityStopped(activity: Activity?) {
+            override fun onActivityStopped(activity: Activity) {
             }
 
-            override fun onActivitySaveInstanceState(activity: Activity?, outState: Bundle?) {
+            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
             }
 
         })
@@ -62,8 +62,8 @@ object Halia {
         return dialogCreator(data, activity)
     }
 
-    private fun defaultDialogCreator(data: Any? = null, activity: Activity): Dialog? =
-        MaterialDialog(activity).title(text = "Loading")
+    private fun defaultDialogCreator(data: Any? = null, activity: Activity): Dialog =
+        AlertDialog.Builder(activity).setTitle("Loading").setMessage(" Please wait for loading").create()
 
     private fun setTopActivity(activity: Activity?) {
         activity ?: return

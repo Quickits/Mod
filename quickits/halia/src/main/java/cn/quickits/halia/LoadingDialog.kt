@@ -1,11 +1,11 @@
 package cn.quickits.halia
 
 import android.app.Dialog
-import io.reactivex.Observable
-import io.reactivex.disposables.Disposable
-import io.reactivex.processors.BehaviorProcessor
-import io.reactivex.processors.FlowableProcessor
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.processors.BehaviorProcessor
+import io.reactivex.rxjava3.processors.FlowableProcessor
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 
 /**

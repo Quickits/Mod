@@ -1,7 +1,7 @@
 package cn.quickits.halia
 
-import io.reactivex.Observable
-import io.reactivex.processors.FlowableProcessor
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.processors.FlowableProcessor
 
 /**
  * @author: taicheng
