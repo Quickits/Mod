@@ -8,8 +8,12 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment : Fragment(), OnBackPressedHandler, OnWindowFocusChangedHandler {
+abstract class BaseFragment<VB : ViewBinding> : Fragment(), OnBackPressedHandler,
+    OnWindowFocusChangedHandler {
+
+    var binding: VB? = null
 
     private var isStopped = false
 
@@ -18,11 +22,20 @@ abstract class BaseFragment : Fragment(), OnBackPressedHandler, OnWindowFocusCha
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(bindLayoutId(), container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = createViewBinding(inflater, container, savedInstanceState)
+        return binding?.root
     }
 
-    abstract fun bindLayoutId(): Int
+    abstract fun createViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): VB
 
     override fun onStart() {
         if (isStopped) {

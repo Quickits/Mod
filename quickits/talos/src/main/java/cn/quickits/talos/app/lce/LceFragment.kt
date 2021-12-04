@@ -1,17 +1,18 @@
 package cn.quickits.talos.app.lce
 
-import androidx.lifecycle.Observer
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.viewbinding.ViewBinding
 import cn.quickits.talos.app.BaseFragment
-import cn.quickits.talos.app.lce.data.ErrorData
 import cn.quickits.talos.app.lce.animator.LceAnimator
 import cn.quickits.talos.app.lce.animator.MaterialLceAnimator
+import cn.quickits.talos.app.lce.data.ErrorData
 
-abstract class LceFragment<M, VM : LceViewModel<M>, CV : View> : BaseFragment() {
+abstract class LceFragment<VB : ViewBinding, M, VM : LceViewModel<M>, CV : View> :
+    BaseFragment<VB>() {
 
     lateinit var viewModel: VM
 
@@ -35,15 +36,15 @@ abstract class LceFragment<M, VM : LceViewModel<M>, CV : View> : BaseFragment() 
         contentView = createContentView(view)
         errorView = createErrorView(view)
 
-        viewModel.loader.observe(this, Observer { pullToRefresh ->
+        viewModel.loader.observe(viewLifecycleOwner, { pullToRefresh ->
             showLoading(pullToRefresh)
         })
 
-        viewModel.content.observe(this, Observer { content ->
+        viewModel.content.observe(viewLifecycleOwner, { content ->
             showContent(content)
         })
 
-        viewModel.error.observe(this, Observer { errorData ->
+        viewModel.error.observe(viewLifecycleOwner, { errorData ->
             showError(errorData)
         })
     }
@@ -71,6 +72,8 @@ abstract class LceFragment<M, VM : LceViewModel<M>, CV : View> : BaseFragment() 
     open fun showError(errorData: ErrorData?) {
         errorData ?: return
 
+        val ctx = context ?: return
+
         val msg: CharSequence = getErrorMessage(errorData)
 
         if (errorData.pullToRefresh) {
@@ -79,7 +82,7 @@ abstract class LceFragment<M, VM : LceViewModel<M>, CV : View> : BaseFragment() 
             errorView.text = msg
 
             if (errorData.eIcon != -1) {
-                val drawable = ContextCompat.getDrawable(context!!, errorData.eIcon)
+                val drawable = ContextCompat.getDrawable(ctx, errorData.eIcon)
                 errorView.setCompoundDrawablesRelativeWithIntrinsicBounds(
                     null,
                     drawable,
