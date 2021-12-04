@@ -2,16 +2,12 @@ import cn.quickits.tools.make.DpdInfo
 import cn.quickits.tools.make.DpdManager
 import cn.quickits.tools.make.GradleBuildHooker
 
-println("root build")
-
 buildscript {
     new GradleBuildHooker().hook(gradle)
 
     repositories {
-        maven { url "https://maven.aliyun.com/repository/google" }
-        maven { url "https://maven.aliyun.com/repository/jcenter" }
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -23,10 +19,8 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url "https://maven.aliyun.com/repository/google" }
-        maven { url "https://maven.aliyun.com/repository/jcenter" }
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 

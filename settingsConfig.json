@@ -11,14 +11,16 @@
     { "isApply": true, "useLocal": true, "localPath": ":quickits:all" },
     { "isApply": true, "useLocal": true, "localPath": ":quickits:talos" },
     { "isApply": true, "useLocal": true, "localPath": ":quickits:halia" },
+    { "isApply": true, "useLocal": true, "localPath": ":quickits:hemera" },
     { "isApply": true, "useLocal": true, "localPath": ":quickits:rainbow" },
     { "isApply": true, "useLocal": true, "localPath": ":quickits:routerfit" },
 
-    { "isApply": true, "useLocal": true, "localPath": ":features:featureHalia:app" },
     { "isApply": true, "useLocal": true, "localPath": ":features:featureHalia:pkg" },
     { "isApply": true, "useLocal": true, "localPath": ":features:featureHalia:export" },
 
-    { "isApply": true, "useLocal": true, "localPath": ":features:featureRainbow:app" },
+    { "isApply": true, "useLocal": true, "localPath": ":features:featureHemera:pkg" },
+    { "isApply": true, "useLocal": true, "localPath": ":features:featureHemera:export" },
+
     { "isApply": true, "useLocal": true, "localPath": ":features:featureRainbow:pkg" },
     { "isApply": true, "useLocal": true, "localPath": ":features:featureRainbow:export" }
   ]

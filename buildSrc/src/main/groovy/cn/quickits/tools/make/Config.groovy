@@ -5,17 +5,18 @@ class Config {
     public static applicationId = "cn.quickits.mod"
     public static appName = "Mod"
 
-    public static compileSdkVersion = 30
+    public static compileSdkVersion = 31
     public static minSdkVersion = 21
-    public static targetSdkVersion = 30
+    public static targetSdkVersion = 31
 
     public static versionCode = 1
     public static versionName = "1.0.0"
 
-    public static android_build_version = "7.0.0"
-    public static kotlin_version = "1.3.72"
+    public static android_build_version = "7.0.3"
+    public static kotlin_version = "1.6.0"
 
-    public static lifecycle_version = "2.2.0"
+    public static nav_version = "2.3.5"
+    public static lifecycle_version = "2.3.1"
 
     public static deps = [
             /* LocalModule Start */
@@ -24,56 +25,56 @@ class Config {
             quickits_all                  : new DpdInfo(":quickits:all", null, true),
             quickits_talos                : new DpdInfo(":quickits:talos", null, true),
             quickits_halia                : new DpdInfo(":quickits:halia", null, true),
+            quickits_hemera               : new DpdInfo(":quickits:hemera", null, true),
             quickits_rainbow              : new DpdInfo(":quickits:rainbow", null, true),
             quickits_routerfit            : new DpdInfo(":quickits:routerfit", null, true),
-            features_featureHalia_app     : new DpdInfo(":features:featureHalia:app", null, true),
             features_featureHalia_pkg     : new DpdInfo(":features:featureHalia:pkg", null, true),
             features_featureHalia_export  : new DpdInfo(":features:featureHalia:export", null, true),
-            features_featureRainbow_app   : new DpdInfo(":features:featureRainbow:app", null, true),
+            features_featureHemera_pkg    : new DpdInfo(":features:featureHemera:pkg", null, true),
+            features_featureHemera_export : new DpdInfo(":features:featureHemera:export", null, true),
             features_featureRainbow_pkg   : new DpdInfo(":features:featureRainbow:pkg", null, true),
             features_featureRainbow_export: new DpdInfo(":features:featureRainbow:export", null, true),
             /* LocalModule End */
 
-            plugin          : [
+            plugin                        : [
                     gradle              : new DpdInfo("com.android.tools.build:gradle:$android_build_version"),
                     kotlin              : new DpdInfo("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"),
-                    navigation_safe_args: new DpdInfo("androidx.navigation:navigation-safe-args-gradle-plugin:2.2.0"),
+                    navigation_safe_args: new DpdInfo("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"),
             ],
 
-            kotlin          : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
+            kotlin                        : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
 
-            androidx        : [
-                    appcompat              : new DpdInfo("androidx.appcompat:appcompat:1.1.0"),
-                    core_ktx               : new DpdInfo("androidx.core:core-ktx:1.3.0"),
-                    constraint_layout      : new DpdInfo("androidx.constraintlayout:constraintlayout:1.1.3"),
+            androidx                      : [
+                    appcompat                     : new DpdInfo("androidx.appcompat:appcompat:1.4.0"),
+                    core_ktx                      : new DpdInfo("androidx.core:core-ktx:1.7.0"),
+                    constraint_layout             : new DpdInfo("androidx.constraintlayout:constraintlayout:2.1.2"),
 
-                    lifecycle_runtime_ktx  : new DpdInfo("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"),
-                    lifecycle_livedata_ktx : new DpdInfo("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"),
-                    lifecycle_viewmodel_ktx: new DpdInfo("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"),
+                    lifecycle_runtime_ktx         : new DpdInfo("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"),
+                    lifecycle_livedata_ktx        : new DpdInfo("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"),
+                    lifecycle_viewmodel_ktx       : new DpdInfo("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"),
+                    lifecycle_viewmodel_savedstate: new DpdInfo("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"),
 
-                    navigation_ui_ktx      : new DpdInfo("androidx.navigation:navigation-ui-ktx:2.2.0"),
-                    navigation_fragment_ktx: new DpdInfo("androidx.navigation:navigation-fragment-ktx:2.2.0"),
+                    navigation_ui_ktx             : new DpdInfo("androidx.navigation:navigation-ui-ktx:$nav_version"),
+                    navigation_fragment_ktx       : new DpdInfo("androidx.navigation:navigation-fragment-ktx:$nav_version"),
             ],
 
-            material        : new DpdInfo("com.google.android.material:material:1.1.0"),
+            material                      : new DpdInfo("com.google.android.material:material:1.4.0"),
 
-            rxjava2         : new DpdInfo("io.reactivex.rxjava2:rxjava:2.2.19"),
-            rxAndroid       : new DpdInfo("io.reactivex.rxjava2:rxandroid:2.1.1"),
+            rxjava                       : new DpdInfo("io.reactivex.rxjava3:rxjava:3.1.2"),
+            rxAndroid                     : new DpdInfo("io.reactivex.rxjava3:rxandroid:3.0.0"),
 
-            arouter         : [
-                    api     : new DpdInfo("com.alibaba:arouter-api:1.5.0"),
-                    compiler: new DpdInfo("com.alibaba:arouter-compiler:1.2.2"),
+            arouter                       : [
+                    api     : new DpdInfo("com.alibaba:arouter-api:1.5.2"),
+                    compiler: new DpdInfo("com.alibaba:arouter-compiler:1.5.2"),
             ],
 
-            material_dialogs: new DpdInfo("com.afollestad.material-dialogs:core:2.8.1"),
-
-            test            : [
+            test                          : [
                     junit: new DpdInfo("junit:junit:4.12"),
             ],
 
-            androidTest     : [
-                    junit_android_ext: new DpdInfo("androidx.test.ext:junit:1.1.1"),
-                    espresso_core    : new DpdInfo("androidx.test.espresso:espresso-core:3.2.0"),
+            androidTest                   : [
+                    junit_android_ext: new DpdInfo("androidx.test.ext:junit:1.1.3"),
+                    espresso_core    : new DpdInfo("androidx.test.espresso:espresso-core:3.4.0"),
             ]
     ]
 
