@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.feature_rainbow_fragment_demo.*
+import cn.quickits.mod.feature.rainbow.pkg.databinding.FeatureRainbowFragmentDemoBinding
 
 
 /**
@@ -18,14 +18,26 @@ import kotlinx.android.synthetic.main.feature_rainbow_fragment_demo.*
  **/
 class DemoFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.feature_rainbow_fragment_demo, container, false)
+    private var _binding: FeatureRainbowFragmentDemoBinding? = null
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FeatureRainbowFragmentDemoBinding.inflate(inflater, container, false)
+        return _binding?.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        btn.setOnClickListener { findNavController().navigate(R.id.action_demoFragment_to_themeSwitcherFragment) }
+        _binding?.toolbar?.let { (activity as AppCompatActivity).setSupportActionBar(it) }
+        _binding?.btn?.setOnClickListener { findNavController().navigate(R.id.action_demoFragment_to_themeSwitcherFragment) }
     }
 
 }

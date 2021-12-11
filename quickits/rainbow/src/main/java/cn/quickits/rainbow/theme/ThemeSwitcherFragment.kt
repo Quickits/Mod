@@ -2,14 +2,16 @@ package cn.quickits.rainbow.theme
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.collection.ArrayMap
 import cn.quickits.rainbow.R
 import cn.quickits.rainbow.Rainbow
+import cn.quickits.rainbow.databinding.FragmentSwitcherBinding
 import cn.quickits.talos.app.BaseFragment
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
-import kotlinx.android.synthetic.main.fragment_switcher.*
 
 
 /**
@@ -18,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_switcher.*
  * @author: gavinliu
  * @create: 2019-05-14 19:19
  **/
-class ThemeSwitcherFragment : BaseFragment() {
+class ThemeSwitcherFragment : BaseFragment<FragmentSwitcherBinding>() {
 
     private var themePrimaryColor: Int = -1
 
@@ -26,13 +28,19 @@ class ThemeSwitcherFragment : BaseFragment() {
 
     private var arrayMap: ArrayMap<Int, ThemeValue> = ArrayMap()
 
-    override fun bindLayoutId(): Int = R.layout.fragment_switcher
+    override fun createViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): FragmentSwitcherBinding {
+        return FragmentSwitcherBinding.inflate(inflater, container, false)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupChipGroup(
-            chip_group_primary,
+            binding?.chipGroupPrimary,
             ThemeValueResourceProvider.primaryColors,
             intArrayOf(R.attr.colorPrimary),
             ThemeValueResourceProvider.colorDesc
@@ -41,7 +49,7 @@ class ThemeSwitcherFragment : BaseFragment() {
         }
 
         setupChipGroup(
-            chip_group_secondary,
+            binding?.chipGroupSecondary,
             ThemeValueResourceProvider.secondaryColors,
             intArrayOf(R.attr.colorAccent),
             ThemeValueResourceProvider.colorDesc
@@ -49,7 +57,7 @@ class ThemeSwitcherFragment : BaseFragment() {
             themeSecondaryColor = it?.res ?: -1
         }
 
-        fab_apply.setOnClickListener {
+        binding?.fabApply?.setOnClickListener {
             Rainbow.setupThemeOverlays(
                 activity,
                 themePrimaryColor,
@@ -59,12 +67,14 @@ class ThemeSwitcherFragment : BaseFragment() {
     }
 
     private fun setupChipGroup(
-        chipGroup: ChipGroup,
+        chipGroup: ChipGroup?,
         colors: Int,
         attr: IntArray,
         descs: Int,
         select: (ThemeValue?) -> Unit
     ) {
+        chipGroup ?: return
+
         val colorValues = resources.obtainTypedArray(colors)
         val descValues = resources.obtainTypedArray(descs)
 
@@ -77,7 +87,8 @@ class ThemeSwitcherFragment : BaseFragment() {
             val value = a?.getColor(0, Color.TRANSPARENT) ?: 0
             a?.recycle()
 
-            val chip = layoutInflater.inflate(R.layout.item_theme_value_chip, chipGroup, false) as Chip
+            val chip =
+                layoutInflater.inflate(R.layout.item_theme_value_chip, chipGroup, false) as Chip
             chip.id = primaryValue
             chip.text = descValues.getString(i)
             chip.isCheckable = true
@@ -86,8 +97,10 @@ class ThemeSwitcherFragment : BaseFragment() {
             chip.setTextColor(value)
 
             when (chipGroup.id) {
-                R.id.chip_group_primary -> if (themePrimaryColor == primaryValue) checkChipId = primaryValue
-                R.id.chip_group_secondary -> if (themeSecondaryColor == primaryValue) checkChipId = primaryValue
+                R.id.chip_group_primary -> if (themePrimaryColor == primaryValue) checkChipId =
+                    primaryValue
+                R.id.chip_group_secondary -> if (themeSecondaryColor == primaryValue) checkChipId =
+                    primaryValue
             }
 
             arrayMap[primaryValue] = ThemeValue(primaryValue, value)
