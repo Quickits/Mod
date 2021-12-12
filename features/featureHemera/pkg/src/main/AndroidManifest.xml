@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.quickits.mod.feature.hemera.pkg">
+
+    <application>
+
+
+        <activity android:name=".HemeraDemoActivity" />
+
+    </application>
+
+</manifest>
