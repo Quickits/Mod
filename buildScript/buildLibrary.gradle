@@ -8,6 +8,8 @@ apply {
     plugin "kotlin-android"
 
     plugin "kotlin-kapt"
+
+    plugin "maven-publish"
 }
 
 android {

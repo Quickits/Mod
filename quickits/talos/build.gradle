@@ -8,3 +8,10 @@ dependencies {
     api Config.deps.androidx.lifecycle_livedata_ktx.dep
     api Config.deps.androidx.lifecycle_viewmodel_ktx.dep
 }
+
+project.ext {
+    publishingGroupId = 'cn.quickits'
+    publishingArtifactId = 'talos'
+}
+
+apply from: rootDir.absolutePath + '/buildScript/buildPublishing.gradle'

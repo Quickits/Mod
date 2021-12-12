@@ -7,3 +7,10 @@ dependencies {
     api Config.deps.rxjava.dep
     api Config.deps.rxAndroid.dep
 }
+
+project.ext {
+    publishingGroupId = 'cn.quickits'
+    publishingArtifactId = 'halia'
+}
+
+apply from: rootDir.absolutePath + '/buildScript/buildPublishing.gradle'

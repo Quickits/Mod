@@ -9,3 +9,10 @@ dependencies {
 
     api Config.deps.quickits_talos.dep
 }
+
+project.ext {
+    publishingGroupId = 'cn.quickits'
+    publishingArtifactId = 'rainbow'
+}
+
+apply from: rootDir.absolutePath + '/buildScript/buildPublishing.gradle'

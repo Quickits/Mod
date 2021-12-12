@@ -3,3 +3,10 @@ import cn.quickits.tools.make.Config
 dependencies {
     api Config.deps.arouter.api.dep
 }
+
+project.ext {
+    publishingGroupId = 'cn.quickits'
+    publishingArtifactId = 'routerfit'
+}
+
+apply from: rootDir.absolutePath + '/buildScript/buildPublishing.gradle'
