@@ -8,4 +8,4 @@ import io.reactivex.rxjava3.processors.FlowableProcessor
  *
  * Created on 2019-04-23.
  **/
-fun <T> Observable<T>.loading(data: Any? = null): FlowableProcessor<T> = LoadingDialog(this).show(data)
+fun <T : Any> Observable<T>.loading(data: Any? = null): FlowableProcessor<T> = LoadingDialog(this).show(data)

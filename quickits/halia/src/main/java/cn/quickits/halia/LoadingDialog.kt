@@ -13,7 +13,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
  *
  * Created on 2019-04-22.
  **/
-class LoadingDialog<T>(private val observable: Observable<T>) {
+class LoadingDialog<T : Any>(private val observable: Observable<T>) {
 
     private var disposable: Disposable? = null
 
