@@ -15,8 +15,8 @@ class Config {
     public static android_build_version = "7.0.3"
     public static kotlin_version = "1.6.0"
 
-    public static nav_version = "2.3.5"
-    public static lifecycle_version = "2.3.1"
+    public static nav_version = "2.4.2"
+    public static lifecycle_version = "2.4.1"
 
     public static deps = [
             /* LocalModule Start */
@@ -45,9 +45,9 @@ class Config {
             kotlin                        : new DpdInfo("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"),
 
             androidx                      : [
-                    appcompat                     : new DpdInfo("androidx.appcompat:appcompat:1.4.0"),
+                    appcompat                     : new DpdInfo("androidx.appcompat:appcompat:1.4.1"),
                     core_ktx                      : new DpdInfo("androidx.core:core-ktx:1.7.0"),
-                    constraint_layout             : new DpdInfo("androidx.constraintlayout:constraintlayout:2.1.2"),
+                    constraint_layout             : new DpdInfo("androidx.constraintlayout:constraintlayout:2.1.3"),
 
                     lifecycle_runtime_ktx         : new DpdInfo("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"),
                     lifecycle_livedata_ktx        : new DpdInfo("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"),
@@ -58,9 +58,9 @@ class Config {
                     navigation_fragment_ktx       : new DpdInfo("androidx.navigation:navigation-fragment-ktx:$nav_version"),
             ],
 
-            material                      : new DpdInfo("com.google.android.material:material:1.4.0"),
+            material                      : new DpdInfo("com.google.android.material:material:1.5.0"),
 
-            rxjava                       : new DpdInfo("io.reactivex.rxjava3:rxjava:3.1.2"),
+            rxjava                        : new DpdInfo("io.reactivex.rxjava3:rxjava:3.1.4"),
             rxAndroid                     : new DpdInfo("io.reactivex.rxjava3:rxandroid:3.0.0"),
 
             arouter                       : [
