@@ -54,8 +54,8 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), OnBackPressedHandler
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setupActionBar(getSupportActionBar())
     }
 
